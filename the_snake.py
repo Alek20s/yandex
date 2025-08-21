@@ -67,7 +67,7 @@ class Snake(GameObject):
         super().__init__()
         self.body_color = SNAKE_COLOR
 
-    def handle_keys(game_object):
+    def handle_keys(self): # game_object was  now self
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
