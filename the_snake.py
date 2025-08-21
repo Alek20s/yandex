@@ -62,7 +62,6 @@ class Snake(GameObject):
     pass
 
 
-
 def main():
     # Инициализация PyGame:
     pygame.init()
@@ -81,10 +80,10 @@ if __name__ == '__main__':
 
 
 # Метод draw класса Apple
-#                                                        def draw(self):
-#                                                              rect = pygame.Rect(self.position, (GRID_SIZE, GRID_SIZE))
-#                                                              pygame.draw.rect(screen, self.body_color, rect)
-#                                                              pygame.draw.rect(screen, BORDER_COLOR, rect, 1)
+# -          def draw(self):
+# -          rect = pygame.Rect(self.position, (GRID_SIZE, GRID_SIZE))
+# -          pygame.draw.rect(screen, self.body_color, rect)
+# -          pygame.draw.rect(screen, BORDER_COLOR, rect, 1)
 
 # # Метод draw класса Snake
 # def draw(self):
