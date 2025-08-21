@@ -54,8 +54,6 @@ class Apple(GameObject):
         super().__init__()
         self.body_color = APPLE_COLOR
 
-
-
     def draw(self):
         rect = pygame.Rect(self.position, (GRID_SIZE, GRID_SIZE))
         pygame.draw.rect(screen, self.body_color, rect)
