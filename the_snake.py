@@ -51,7 +51,14 @@ class Apple(GameObject):
     def __init__(self):
         super().__init__()
         self.body_color = APPLE_COLOR
+###############################################################################
+    def draw(self):
+        rect = pygame.Rect(self.position, (GRID_SIZE, GRID_SIZE))
+        pygame.draw.rect(screen, self.body_color, rect)
+        pygame.draw.rect(screen, BORDER_COLOR, rect, 1)
 
+
+###########################################################################
 class Snake(GameObject):
     pass
 
@@ -75,17 +82,17 @@ if __name__ == '__main__':
 
 
 # Метод draw класса Apple
-# def draw(self):
-#     rect = pygame.Rect(self.position, (GRID_SIZE, GRID_SIZE))
-#     pygame.draw.rect(screen, self.body_color, rect)
-#     pygame.draw.rect(screen, BORDER_COLOR, rect, 1)
+#                                                        def draw(self):
+#                                                              rect = pygame.Rect(self.position, (GRID_SIZE, GRID_SIZE))
+#                                                              pygame.draw.rect(screen, self.body_color, rect)
+#                                                              pygame.draw.rect(screen, BORDER_COLOR, rect, 1)
 
 # # Метод draw класса Snake
 # def draw(self):
 #     for position in self.positions[:-1]:
-#         rect = (pygame.Rect(position, (GRID_SIZE, GRID_SIZE)))
-#         pygame.draw.rect(screen, self.body_color, rect)
-#         pygame.draw.rect(screen, BORDER_COLOR, rect, 1)
+#     rect = (pygame.Rect(position, (GRID_SIZE, GRID_SIZE)))
+#     pygame.draw.rect(screen, self.body_color, rect)
+#     pygame.draw.rect(screen, BORDER_COLOR, rect, 1)
 
 #     # Отрисовка головы змейки
 #     head_rect = pygame.Rect(self.positions[0], (GRID_SIZE, GRID_SIZE))
