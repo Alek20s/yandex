@@ -50,10 +50,11 @@ class GameObject:
 
 
 class Apple(GameObject):
-
     def __init__(self):
         super().__init__()
         self.body_color = APPLE_COLOR
+
+
 
     def draw(self):
         rect = pygame.Rect(self.position, (GRID_SIZE, GRID_SIZE))
@@ -63,6 +64,11 @@ class Apple(GameObject):
 
 # действия пользователя
 class Snake(GameObject):
+
+    def __init__(self):
+        super().__init__()
+        self.body_color = SNAKE_COLOR
+
     def handle_keys(game_object):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -84,11 +90,13 @@ def main():
     pygame.init()
     # Тут нужно создать экземпляры классов.
     apple = Apple()
+#    snake = Snake()
 
     while True:
         clock.tick(SPEED)
-
-        # Тут опишите основную логику игры.
+#        Snake.handle_keys()
+        pygame.display.update()
+#        # Тут опишите основную логику игры.
         # ...
 
 
