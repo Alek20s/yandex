@@ -40,7 +40,8 @@ clock = pygame.time.Clock()
 
 
 # Тут опишите все классы игры.
-...
+class GameOjbect:
+    pass
 
 
 def main():
@@ -107,3 +108,4 @@ if __name__ == '__main__':
 
 
 # git 21.08
+# gameobject
