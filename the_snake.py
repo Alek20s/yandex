@@ -104,3 +104,6 @@ if __name__ == '__main__':
 #     if self.next_direction:
 #         self.direction = self.next_direction
 #         self.next_direction = None
+
+
+# git 21.08
