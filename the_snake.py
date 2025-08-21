@@ -62,7 +62,6 @@ class Apple(GameObject):
 
 
 class Snake(GameObject):
-######################################################################################################
 # Функция обработки действий пользователя
     def handle_keys(game_object):
         for event in pygame.event.get():
@@ -79,10 +78,6 @@ class Snake(GameObject):
                 elif event.key == pygame.K_RIGHT and game_object.direction != LEFT:
                     game_object.next_direction = RIGHT
 
-
-
-
-####################################################################################################
 
 def main():
     # Инициализация PyGame:
