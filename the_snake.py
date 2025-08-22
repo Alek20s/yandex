@@ -46,10 +46,8 @@ class GameObject:
     def __init__(self) -> None:
         self.position = (SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)
         self.body_color = None
-
+#  ending
     def draw(self):
-    """ending"""
-
         pass
 
 
@@ -64,7 +62,6 @@ class Apple(GameObject):
         rect = pygame.Rect(self.position, (GRID_SIZE, GRID_SIZE))
         pygame.draw.rect(screen, self.body_color, rect)
         pygame.draw.rect(screen, BORDER_COLOR, rect, 1)
-
 
 
 class Snake(GameObject):
