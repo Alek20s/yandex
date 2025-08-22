@@ -47,8 +47,8 @@ class GameObject:
         self.position = (SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)
         self.body_color = None
     
-    """ending"""
     def draw(self):
+    """ending"""
         pass
 
 
