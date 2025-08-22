@@ -37,7 +37,6 @@ pygame.display.set_caption('Змейка')
 
 # Настройка времени:
 clock = pygame.time.Clock()
- 
 
 class GameObject:
     """Class_description"""
@@ -47,6 +46,7 @@ class GameObject:
         self.body_color = None
 
     def draw(self):
+    """Ending"""
         pass
 
 
