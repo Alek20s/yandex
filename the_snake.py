@@ -84,8 +84,7 @@ def handle_keys(game_object):
                 game_object.next_direction = RIGHT
 
 
-"""Запускает основную игру: инициализация PyGame, 
-создание объектови игровой цикл."""
+"""Запускает игру: инициализация PyGame, создание объектови игровой цикл."""
 def main():
     # Инициализация PyGame:
     pygame.init()
@@ -95,7 +94,7 @@ def main():
 
     while True:
         clock.tick(SPEED)
-        handle_keys(apple)
+        handle_keys(snake)
         pygame.display.update()
 #        # Тут опишите основную логику игры.
         # ...
@@ -128,21 +127,6 @@ if __name__ == '__main__':
 #         last_rect = pygame.Rect(self.last, (GRID_SIZE, GRID_SIZE))
 #         pygame.draw.rect(screen, BOARD_BACKGROUND_COLOR, last_rect)
 
-# - Функция обработки действий пользователя
-# - def handle_keys(game_object):
-# -   for event in pygame.event.get():
-# -       if event.type == pygame.QUIT:
-# -           pygame.quit()
-# -           raise SystemExit
-# -       elif event.type == pygame.KEYDOWN:
-# -           if event.key == pygame.K_UP and game_object.direction != DOWN:
-# -               game_object.next_direction = UP
-# -           elif event.key == pygame.K_DOWN and game_object.direction != UP:
-# -               game_object.next_direction = DOWN
-# -       elif event.key == pygame.K_LEFT and game_object.direction != RIGHT:
-# -               game_object.next_direction = LEFT
-# -       elif event.key == pygame.K_RIGHT and game_object.direction != LEFT:
-# -                 game_object.next_direction = RIGHT
 
 # Метод обновления направления после нажатия на кнопку
 # def update_direction(self):
