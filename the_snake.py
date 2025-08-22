@@ -48,6 +48,8 @@ class GameObject:
         self.body_color = None
 
     def draw(self):
+    """ending"""
+
         pass
 
 
