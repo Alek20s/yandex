@@ -37,7 +37,6 @@ pygame.display.set_caption('Змейка')
 
 # Настройка времени:
 clock = pygame.time.Clock()
-
  
 class GameObject:
     """Class_description"""
@@ -49,8 +48,11 @@ class GameObject:
     def draw(self):
         pass
 
-'Describing class Apple'
+
 class Apple(GameObject):
+    """Describing class Apple"""
+
+
     def __init__(self):
         super().__init__()
         self.body_color = APPLE_COLOR
