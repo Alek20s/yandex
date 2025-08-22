@@ -1,6 +1,6 @@
 from random import choice, randint
-
 import pygame
+
 
 # Константы для размеров поля и сетки:
 SCREEN_WIDTH, SCREEN_HEIGHT = 640, 480
@@ -14,7 +14,7 @@ DOWN = (0, 1)
 LEFT = (-1, 0)
 RIGHT = (1, 0)
 
-# Цвет фона - черный:
+# Цвет фона - чёрный:
 BOARD_BACKGROUND_COLOR = (0, 0, 0)
 
 # Цвет границы ячейки
@@ -36,7 +36,6 @@ screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), 0, 32)
 pygame.display.set_caption('Змейка')
 
 # Настройка времени:
-# Настройка времени:
 clock = pygame.time.Clock()
 
 
@@ -46,15 +45,12 @@ class GameObject:
     def __init__(self) -> None:
         self.position = (SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)
         self.body_color = None
-    
+
     def draw(self):
-    """ending"""
         pass
 
 
 class Apple(GameObject):
-    """Describing class Apple"""
-
     def __init__(self):
         super().__init__()
         self.body_color = APPLE_COLOR
@@ -66,31 +62,29 @@ class Apple(GameObject):
 
 
 class Snake(GameObject):
-    """действия пользователя"""
-
     def __init__(self):
         super().__init__()
         self.body_color = SNAKE_COLOR
-# Метод draw класса Snake
+
     def draw(self):
         for position in self.positions[:-1]:
             rect = (pygame.Rect(position, (GRID_SIZE, GRID_SIZE)))
             pygame.draw.rect(screen, self.body_color, rect)
             pygame.draw.rect(screen, BORDER_COLOR, rect, 1)
-     # Отрисовка головы змейки
+
             head_rect = pygame.Rect(self.positions[0], (GRID_SIZE, GRID_SIZE))
             pygame.draw.rect(screen, self.body_color, head_rect)
             pygame.draw.rect(screen, BORDER_COLOR, head_rect, 1)
 
-     # Затирание последнего сегмента
             if self.last:
                 last_rect = pygame.Rect(self.last, (GRID_SIZE, GRID_SIZE))
                 pygame.draw.rect(screen, BOARD_BACKGROUND_COLOR, last_rect)
-# Метод обновления направления после нажатия на кнопку
+
     def update_direction(self):
         if self.next_direction:
             self.direction = self.next_direction
             self.next_direction = None
+
 
 def handle_keys(game_object):
     for event in pygame.event.get():
@@ -120,7 +114,7 @@ def main():
         clock.tick(SPEED)
         handle_keys(snake)
         pygame.display.update()
-#        # Тут опишите основную логику игры.
+        #        # Тут опишите основную логику игры.
         # ...
 
 
