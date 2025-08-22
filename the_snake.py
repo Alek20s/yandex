@@ -48,7 +48,7 @@ class GameObject:
     def draw(self):
         pass
 
-""" Describing class Apple"""
+''' Describing class Apple'''
 class Apple(GameObject):
     def __init__(self):
         super().__init__()
@@ -60,7 +60,7 @@ class Apple(GameObject):
         pygame.draw.rect(screen, BORDER_COLOR, rect, 1)
 
 
-# действия пользователя
+''' действия пользователя'''
 class Snake(GameObject):
 
     def __init__(self):
@@ -103,7 +103,7 @@ def handle_keys(game_object):
                 game_object.next_direction = RIGHT
 
 
-"""Запускает игру: инициализация PyGame, создание объектови игровой цикл."""
+'''Запускает игру: инициализация PyGame, создание объектови игровой цикл.'''
 def main():
     # Инициализация PyGame:
     pygame.init()
