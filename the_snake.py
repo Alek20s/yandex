@@ -40,33 +40,43 @@ clock = pygame.time.Clock()
 
 
 class GameObject:
-    """Class_description"""
+    """Base class for all game objects."""
 
     def __init__(self) -> None:
+        """Initialize default position and color."""
         self.position = (SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)
         self.body_color = None
 
     def draw(self):
+        """Draw the object (override in subclasses)."""
         pass
 
 
 class Apple(GameObject):
+    """Apple object on the grid."""
+
     def __init__(self):
+        """Initialize apple color."""
         super().__init__()
         self.body_color = APPLE_COLOR
 
     def draw(self):
+        """Draw the apple on the screen."""
         rect = pygame.Rect(self.position, (GRID_SIZE, GRID_SIZE))
         pygame.draw.rect(screen, self.body_color, rect)
         pygame.draw.rect(screen, BORDER_COLOR, rect, 1)
 
 
 class Snake(GameObject):
+    """Snake controlled by the player."""
+
     def __init__(self):
+        """Initialize snake color."""
         super().__init__()
         self.body_color = SNAKE_COLOR
 
     def draw(self):
+        """Draw the snake on the screen."""
         for position in self.positions[:-1]:
             rect = (pygame.Rect(position, (GRID_SIZE, GRID_SIZE)))
             pygame.draw.rect(screen, self.body_color, rect)
@@ -78,46 +88,4 @@ class Snake(GameObject):
 
             if self.last:
                 last_rect = pygame.Rect(self.last, (GRID_SIZE, GRID_SIZE))
-                pygame.draw.rect(screen, BOARD_BACKGROUND_COLOR, last_rect)
-
-    def update_direction(self):
-        if self.next_direction:
-            self.direction = self.next_direction
-            self.next_direction = None
-
-
-def handle_keys(game_object):
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            raise SystemExit
-        elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_UP and game_object.direction != DOWN:
-                game_object.next_direction = UP
-            elif event.key == pygame.K_DOWN and game_object.direction != UP:
-                game_object.next_direction = DOWN
-            elif event.key == pygame.K_LEFT and game_object.direction != RIGHT:
-                game_object.next_direction = LEFT
-            elif event.key == pygame.K_RIGHT and game_object.direction != LEFT:
-                game_object.next_direction = RIGHT
-
-
-'''Запускает игру: инициализация PyGame, создание объектови игровой цикл.'''
-def main():
-    # Инициализация PyGame:
-    pygame.init()
-    # Тут нужно создать экземпляры классов.
-    apple = Apple()
-    snake = Snake()
-
-    while True:
-        clock.tick(SPEED)
-        handle_keys(snake)
-        pygame.display.update()
-        #        # Тут опишите основную логику игры.
-        # ...
-
-
-if __name__ == '__main__':
-    main()
-
+                pygame.draw.rect(sc
