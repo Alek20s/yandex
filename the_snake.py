@@ -44,7 +44,7 @@ class GameObject:
     def __init__(self) -> None:
         self.position = (SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)
         self.body_color = None
-"""  Drawing object """
+
     def draw(self):
         pass
 
