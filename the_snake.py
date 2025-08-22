@@ -59,6 +59,10 @@ class Apple(GameObject):
         """Initialize apple color."""
         super().__init__()
         self.body_color = APPLE_COLOR
+        self.position = (
+            randint(0, GRID_WIDTH - 1) * GRID_SIZE,
+            randint(0, GRID_HEIGHT - 1) * GRID_SIZE
+        )
 
     def draw(self):
         """Draw the apple on the screen."""
@@ -74,6 +78,10 @@ class Snake(GameObject):
         """Initialize snake color."""
         super().__init__()
         self.body_color = SNAKE_COLOR
+        self.positions = [self.position]
+        self.direction = RIGHT
+        self.next_direction = None
+        self.last = None
 
     def draw(self):
         """Draw the snake on the screen."""
@@ -128,6 +136,7 @@ def main():
     while True:
         clock.tick(SPEED)
         handle_keys(snake)
+        apple.draw()
         pygame.display.update()
         # Тут опишите основную логику игры.
         # ...
