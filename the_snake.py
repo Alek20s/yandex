@@ -84,7 +84,8 @@ def handle_keys(game_object):
                 game_object.next_direction = RIGHT
 
 
-"""Запускает основную игру: инициализация PyGame, создание объектов и игровой цикл."""
+"""Запускает основную игру: инициализация PyGame, 
+создание объектови игровой цикл."""
 def main():
     # Инициализация PyGame:
     pygame.init()
