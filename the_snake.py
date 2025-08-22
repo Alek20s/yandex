@@ -88,4 +88,51 @@ class Snake(GameObject):
 
             if self.last:
                 last_rect = pygame.Rect(self.last, (GRID_SIZE, GRID_SIZE))
-                pygame.draw.rect(sc
+                pygame.draw.rect(screen, BOARD_BACKGROUND_COLOR, last_rect)
+
+    def update_direction(self):
+        """Update snake direction based on user input."""
+        if self.next_direction:
+            self.direction = self.next_direction
+            self.next_direction = None
+
+
+def handle_keys(game_object):
+    """Handle keyboard input for controlling the snake."""
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            raise SystemExit
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_UP and game_object.direction != DOWN:
+                game_object.next_direction = UP
+            elif event.key == pygame.K_DOWN and game_object.direction != UP:
+                game_object.next_direction = DOWN
+            elif event.key == pygame.K_LEFT and game_object.direction != RIGHT:
+                game_object.next_direction = LEFT
+            elif event.key == pygame.K_RIGHT and game_object.direction != LEFT:
+                game_object.next_direction = RIGHT
+
+
+"""Запускает игру: инициализация PyGame, создание объектов и игровой цикл."""
+
+
+def main():
+    """Main game loop."""
+    # Инициализация PyGame:
+    pygame.init()
+    # Тут нужно создать экземпляры классов.
+    apple = Apple()
+    snake = Snake()
+
+    while True:
+        clock.tick(SPEED)
+        handle_keys(snake)
+        pygame.display.update()
+        # Тут опишите основную логику игры.
+        # ...
+
+
+if __name__ == '__main__':
+    main()
+
