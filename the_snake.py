@@ -46,13 +46,11 @@ class GameObject:
         self.body_color = None
 
     def draw(self):
-    """Ending"""
         pass
 
 
 class Apple(GameObject):
     """Describing class Apple"""
-
 
     def __init__(self):
         super().__init__()
@@ -64,8 +62,9 @@ class Apple(GameObject):
         pygame.draw.rect(screen, BORDER_COLOR, rect, 1)
 
 
-''' действия пользователя'''
+
 class Snake(GameObject):
+    """действия пользователя"""
 
     def __init__(self):
         super().__init__()
