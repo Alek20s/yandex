@@ -39,7 +39,7 @@ pygame.display.set_caption('Змейка')
 clock = pygame.time.Clock()
 
 
-"Class description" 
+'Class description' 
 class GameObject:
     def __init__(self) -> None:
         self.position = (SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)
@@ -48,7 +48,7 @@ class GameObject:
     def draw(self):
         pass
 
-'''  Describing class Apple  '''
+'Describing class Apple'
 class Apple(GameObject):
     def __init__(self):
         super().__init__()
